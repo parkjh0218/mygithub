@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+	      <!--  커넥션 풀 만드는 방법  -->
+      <bean id="oracleDataSource" class="oracle.jdbc.pool.OracleDataSource" destroy-method="close">
+      <property name="URL" value="jdbc:oracle:thin:@localhost:1521:XE"></property>
+      <property name="user" value="scott"></property>
+      <property name="password" value="tiger"></property>
+      <property name="connectionCachingEnabled" value="true"></property>
+      <qualifier value="main-db"></qualifier>
+      </bean>
+      
+      <!--  Mybatis SessionFactory -->
+      
+      <bean id="sqlSessionFactory" class ="org.mybatis.spring.SqlSessionFactoryBean">
+      <property name="dataSource" ref="oracleDataSource"></property>
+      <property name="configLocation"  value="classpath:mybatis-config.xml"></property> <!--  mybatis설정 -->
+      </bean>
+      
+      <!-- dao에 자동으로  생성자로 이용한 주입 방식 -->
+            <!--  SqlSession-->
+      <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+      <constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>
+      </bean>
+		
+		
+</beans>
