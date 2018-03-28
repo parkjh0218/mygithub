@@ -6,7 +6,7 @@ public class linuxjavamain {
 		// TODO Auto-generated method stub
 
 			System.out.println("hello linux!");
-			System.out.println("FIGHTING!!");
+			System.out.println("FIGHTING!!!");
 	}
 
 }
