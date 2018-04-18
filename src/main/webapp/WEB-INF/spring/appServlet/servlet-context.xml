@@ -21,8 +21,9 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- 	컨트롤러를 찾는 영역설정  -->
 	<context:component-scan base-package="com.bit.app" />
-
+	
 	
 	
 </beans:beans>

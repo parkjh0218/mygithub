@@ -11,5 +11,8 @@
 
 <P>  The time on the server is ${serverTime}. </P>
 <a href ="${pageContext.servletContext.contextPath}/board/list">board</a><br>
+<a href ="${pageContext.servletContext.contextPath}/guestbook/list">guestbook</a><br>
+
+
 </body>
 </html>

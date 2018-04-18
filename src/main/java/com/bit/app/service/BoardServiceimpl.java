@@ -5,11 +5,13 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.bit.app.dao.BoardDAO;
 import com.bit.app.vo.BoardVO;
 
+@Repository
 @Service
 public class BoardServiceimpl implements BoardService{
 @Autowired
